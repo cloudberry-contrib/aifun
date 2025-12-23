@@ -12,11 +12,35 @@ An Apache Cloudberry/PostgreSQL extension that provides AI-powered functions tha
 
 ## Installation
 
-```bash
-# Install the extension
-make install
+### Prerequisites
 
-# In PostgreSQL
+Before installing aifun, you need to install the following extensions:
+
+1. **plpython3u** - PL/Python3 procedural language
+
+```sql
+CREATE EXTENSION plpython3u;
+```
+
+2. **pgvector** - Vector similarity search extension
+
+```bash
+git clone https://github.com/cloudberry-contrib/pgvector.git
+cd pgvector
+make && make install
+```
+
+```sql
+CREATE EXTENSION vector;
+```
+
+### Install aifun
+
+```bash
+make install
+```
+
+```sql
 CREATE EXTENSION aifun;
 ```
 
